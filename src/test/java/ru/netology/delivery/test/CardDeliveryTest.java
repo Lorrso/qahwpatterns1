@@ -32,7 +32,7 @@ public class CardDeliveryTest {
         $("[data-test-id=agreement]").click();
         $(byText("Запланировать")).click();
         $(byText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
-        $("[data-test-id=success-notification] .notification__content").shouldBe(visible).shouldHave(Condition.exactText("Встреча успешно забронирована на " + firstMeetingDate));
+        $("[data-test-id=success-notification] .notification__content").shouldBe(visible).shouldHave(Condition.exactText("Встреча успешно запланирована на " + firstMeetingDate));
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.DELETE);
         $("[data-test-id=date] input").setValue(secondMeetingDate);
         $(byText("Запланировать")).click();
